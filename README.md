@@ -14,4 +14,4 @@ Python files:
 - *aces.py:* Random forest model for disease likelihood prediction based on ACE scores. (in progress)
 - *__init__.py:* application factory for our Flask app (It defines a create_app() function that initializes and configures our Flask application)
 - *config.py:* defines configuration settings for your Flask application across different environments: development, testing, and production.
-- *routes.py:* defines URL routes and request handling logic for your Flask web application using a Blueprint named main_bp. It controls what happens when a user: visits the homepage (/),fills and submits a form (/predict),receives prediction results.
+- *routes.py:* defines URL routes and request handling logic for the Flask web application using a Blueprint named main_bp. It controls what happens when a user visits the homepage (/),fills and submits a form (/predict),receives prediction results.
