@@ -1,0 +1,36 @@
+header{
+  background-color:#006A71 ;
+  color: aquamarine;
+}
+h1{
+  text-align:center;
+  font-size: 5rem ;
+  position: relative;
+  top: 200px;
+ 
+}
+.hero-section{
+  background-color: #F2EFE7;
+  height: 600px;
+}
+#card1{
+  position: relative;
+  left: 200px;
+  top: 80px;
+  display: inline-block;
+  height: 300px;
+  background-color: #48A6A7;     
+  color: #F2EFE7;
+  padding: 10px;
+}
+.info-section{
+  height: 500px;
+}
+.Benefits{
+  font-family: "ComicComic Relief";
+  font-size: 30px;
+  display: inline-block;
+  position: relative;
+  left: 500px;
+  top: 100px;
+}
