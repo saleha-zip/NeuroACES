@@ -1,36 +1,84 @@
 header{
-  background-color:#006A71 ;
-  color: aquamarine;
+    background-color:#006A71 ;
+    color: aquamarine;
 }
 h1{
-  text-align:center;
-  font-size: 5rem ;
-  position: relative;
-  top: 200px;
- 
+    text-align:center;
+    font-size: 5rem ;
+    position: relative;
+    top: 100px;
+   
 }
 .hero-section{
-  background-color: #F2EFE7;
-  height: 600px;
+    background-color: #F2EFE7;
+    height: 600px;
 }
 #card1{
-  position: relative;
-  left: 200px;
-  top: 80px;
-  display: inline-block;
-  height: 300px;
-  background-color: #48A6A7;     
-  color: #F2EFE7;
-  padding: 10px;
+    position: relative;
+    left: 200px;
+    top: 80px;
+    display: inline-block;
+    height: 300px;
+    background-color: #48A6A7;     
+    color: #F2EFE7;
+    padding: 10px;
 }
 .info-section{
-  height: 500px;
+    height: 500px;
+    height: 85vh;
+
 }
 .Benefits{
-  font-family: "ComicComic Relief";
-  font-size: 30px;
-  display: inline-block;
-  position: relative;
-  left: 500px;
-  top: 100px;
+    font-family: "ComicComic Relief";
+    font-size: 30px;
+    display: inline-block;
+    position: relative;
+    left: 500px;
+    top: 100px;
+}
+.hero-section{
+    background-image: url('assets/images/Hero-section.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 89vh;
+}
+button{
+    height: 50px;
+    background-color: #48A6A7;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+.descripton{
+    font-size: 24px;
+    width: 600px;
+    text-align: center;
+    position: relative;
+    top: 100px;
+    left: 450px;
+}
+.button1,.button2{
+    height: 55px;
+    margin: 10px;
+    padding-bottom: 10px;
+    border-radius:10px ;
+   
+}
+.button1{
+   padding-right: 50px;
+    padding-left: 50px;
+    background-color: white;
+    color: grey;
+}
+.button2{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.button2_text{
+    text-decoration: none;
+    color: aliceblue;
+}
+.navbar{
+    background-color: #48A6A7;
 }
