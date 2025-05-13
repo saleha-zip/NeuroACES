@@ -1,12 +1,446 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Hello</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>About Neuroaces - Clear Minds, Clear Path</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+  /* CSS Reset */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin:0; padding:0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #F2EFE7;
+    color: #006A71;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  a {
+    color: #48A6A7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover, a:focus {
+    color: #006A71;
+    outline: none;
+  }
+  h1,h2,h3 {
+    color: #006A71;
+    margin-top: 0;
+  }
+  h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+    color: #00494C;
+  }
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid #48A6A7;
+    padding-bottom: 0.3rem;
+    max-width: fit-content;
+  }
+  h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+  p {
+    max-width: 720px;
+    margin-bottom: 1.25rem;
+    color: #00494C;
+  }
+
+  /* Container */
+  .container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* Hero Section */
+  header.hero {
+    position: relative;
+    background: url('https://images.unsplash.com/photo-1534759846110-9e9d97f4b4d8?auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+    color: #F2EFE7;
+    padding: 7rem 1.5rem 7rem 1.5rem;
+    text-align: center;
+  }
+  header.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 106, 113, 0.75);
+    z-index: 0;
+  }
+  header.hero .hero-content {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+    z-index: 1;
+  }
+  header.hero h1 {
+    font-size: 3rem;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  }
+  header.hero p {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-top: 0.75rem;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.4);
+  }
+
+  /* Content Sections Full Width (images removed) */
+  .content-section {
+    padding: 5rem 0;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .content-section h2 {
+    margin-bottom: 1rem;
+  }
+  .content-section p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #00494C;
+    margin-bottom: 1rem;
+  }
+  ul.features-list {
+    padding-left: 1.25rem;
+    color: #00494C;
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-top: 1rem;
+  }
+  ul.features-list li {
+    margin-bottom: 0.8rem;
+    list-style-position: inside;
+  }
+
+  /* Team Section */
+  section.team {
+    background: #9ACBD0;
+    border-radius: 15px;
+    padding: 4rem 1.5rem;
+    text-align: center;
+    margin-bottom: 5rem;
+    box-shadow: 0 10px 25px rgba(0,106,113,0.15);
+  }
+  section.team h2 {
+    color: #00494C;
+    margin-bottom: 3rem;
+  }
+  .team-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .team-member {
+    background: #48A6A7;
+    color: #F2EFE7;
+    border-radius: 15px;
+    padding: 1.5rem 1.3rem;
+    box-shadow: 0 7px 20px rgba(0,106,113,0.25);
+    transition: transform 0.3s ease;
+  }
+  .team-member:hover, .team-member:focus-within {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,106,113,0.35);
+    outline: none;
+  }
+  .team-member img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 4px solid #F2EFE7;
+    margin-bottom: 1rem;
+  }
+  .team-member h3 {
+    margin-bottom: 0.3rem;
+    font-weight: 700;
+  }
+  .team-member p {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+
+  /* Core Values */
+  section.values {
+    margin-bottom: 5rem;
+    text-align: center;
+  }
+  section.values h2 {
+    margin-bottom: 3rem;
+    color: #006A71;
+  }
+  .values-grid {
+    display: grid;
+    gap: 2rem 3rem;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .value-card {
+    background: #48A6A7;
+    border-radius: 12px;
+    color: #F2EFE7;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 7px 18px rgba(0,106,113,0.3);
+    transition: background-color 0.3s ease;
+  }
+  .value-card:hover, .value-card:focus-within {
+    background-color: #006A71;
+    outline: none;
+    cursor: default;
+  }
+  .value-card h3 {
+    margin-bottom: 1rem;
+  }
+  .value-card p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  /* Trust & Credibility */
+  section.trust {
+    background: #E8EEED;
+    padding: 3rem 1.5rem;
+    border-radius: 15px;
+    max-width: 900px;
+    margin: 0 auto 6rem auto;
+    box-shadow: 0 8px 25px rgba(0,106,113,0.12);
+    color: #006A71;
+    text-align: center;
+  }
+  section.trust h2 {
+    margin-bottom: 2rem;
+  }
+  section.trust ul {
+    list-style: none;
+    padding: 0;
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.6;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  section.trust ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 1.4rem;
+  }
+  section.trust ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #48A6A7;
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  /* Call To Action Footer */
+  footer {
+    background: #48A6A7;
+    color: #F2EFE7;
+    text-align: center;
+    padding: 4rem 1.5rem;
+  }
+  footer h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+  footer p {
+    margin-bottom: 2rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+  footer a.cta-btn {
+    background: #006A71;
+    color: #F2EFE7;
+    padding: 1rem 2.5rem;
+    border-radius: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    box-shadow: 0 7px 20px rgba(0,106,113,0.5);
+    transition: background-color 0.3s ease;
+    display: inline-block;
+  }
+  footer a.cta-btn:hover,
+  footer a.cta-btn:focus {
+    background-color: #00494C;
+    outline: none;
+  }
+
+  /* Simple fade-in and up animation */
+  .fadeup {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .fadeup.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .content-section {
+      max-width: 100%;
+    }
+  }
+  @media (max-width: 480px) {
+    header.hero h1 {
+      font-size: 2.2rem;
+    }
+    header.hero p {
+      font-size: 1rem;
+    }
+    footer h2 {
+      font-size: 1.5rem;
+    }
+    footer p {
+      font-size: 1rem;
+    }
+  }
+</style>
 </head>
 <body>
-  <h1>Hello, {{ name }}!</h1>
-  <p>This page was rendered with a variable passed from the route.</p>
-  <p><a href="{{ url_for('main.index') }}">Back Home</a></p>
+<header class="hero" role="banner" aria-label="Hero banner introducing Neuroaces">
+  <div class="hero-content fadeup">
+    <h1>Clear Minds, Clear Path</h1>
+    <p>Trust Through Transparency: Empowering Proactive Health with Neuroaces Neuroscience Technology</p>
+  </div>
+</header>
+
+<main class="container">
+  <section class="content-section fadeup" aria-labelledby="mission-vision-title">
+    <div class="content-text">
+      <h2 id="mission-vision-title">Our Mission &amp; Vision</h2>
+      <p>At Neuroaces, our mission is to revolutionize healthcare by providing early, objective, and actionable insights through cutting-edge neuroscience technology. We envision a future where individuals can take control of their well-being, guided by transparency, trust, and empathy.</p>
+    </div>
+  </section>
+
+  <section class="content-section fadeup" aria-labelledby="science-section-title">
+    <div class="content-text">
+      <h2 id="science-section-title">The Science: Understanding Neuroaces</h2>
+      <p>Neuroaces leverages advanced, non-invasive neuroscience techniques to assess neural health through objective measurements. Our technology detects subtle changes and patterns early, enabling proactive interventions before symptoms arise.</p>
+      <ul class="features-list">
+        <li>Non-invasive and painless process</li>
+        <li>Delivers unbiased, objective insights</li>
+        <li>Enables early detection of potential health risks</li>
+      </ul>
+      <p><a href="#" aria-label="Learn more about our research">Learn more about our research &raquo;</a></p>
+    </div>
+  </section>
+
+  <section class="team fadeup" aria-labelledby="team-title">
+    <h2 id="team-title">Meet Our Team</h2>
+    <div class="team-grid">
+      <article class="team-member" tabindex="0" aria-label="Saleha Asim, Chief Neurologist">
+        <img src="./assets/images/Profile_Icon.jpg" alt="Saleha Asim" loading="lazy" />
+        <h3>Saleha Asim</h3>
+        
+      </article>
+      <article class="team-member" tabindex="0" aria-label="Maryam Sajid, Lead Researcher">
+        <img src="./assets/images/Profile_Icon.jpg" alt="Maryam Sajid" loading="lazy" />
+        <h3>Maryam Sajid</h3>
+        
+      </article>
+      <article class="team-member" tabindex="0" aria-label="Arooj Fatima, Data Scientist">
+        <img src="./assets/images/Profile_Icon.jpg" alt="Arooj Fatima" loading="lazy" />
+        <h3>Arooj Fatima</h3>
+        
+      </article>
+      <article class="team-member" tabindex="0" aria-label="Fatima Afzal, Biomedical Engineer">
+        <img src="./assets/images/Profile_Icon.jpg" alt="Fatima Afzal" loading="lazy" />
+        <h3>Fatima Afzal</h3>
+        
+      </article>
+      <article class="team-member" tabindex="0" aria-label="Mishkaat Noor, Biomedical Engineer">
+        <img src="./assets/images/Profile_Icon.jpg" alt="Mishkaat Noor" loading="lazy" />
+        <h3>Mishkaat Noor</h3>
+        
+      </article>
+      <article class="team-member" tabindex="0" aria-label="Hania Fahad, Biomedical Engineer">
+        <img src="./assets/images/Profile_Icon.jpg" alt="Hania Fahad" loading="lazy" />
+        <h3>Hania Fahad</h3>
+        
+      </article>
+    </div>
+  </section>
+
+  <section class="values fadeup" aria-labelledby="values-title">
+    <h2 id="values-title">Our Core Values</h2>
+    <div class="values-grid">
+      <div class="value-card" tabindex="0">
+        <h3>Empathy</h3>
+        <p>We put patients first, fostering understanding and compassionate care.</p>
+      </div>
+      <div class="value-card" tabindex="0">
+        <h3>Scientific Rigor</h3>
+        <p>Our innovations are grounded in robust, peer-reviewed neuroscience.</p>
+      </div>
+      <div class="value-card" tabindex="0">
+        <h3>Patient Privacy</h3>
+        <p>We strictly protect your data, adhering to the highest privacy standards.</p>
+      </div>
+      <div class="value-card" tabindex="0">
+        <h3>Transparency</h3>
+        <p>We believe trust is built through openness and honest communication.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust fadeup" aria-labelledby="trust-title">
+    <h2 id="trust-title">Trust &amp; Credibility</h2>
+    <ul>
+      <li>HIPAA-compliant platform ensures data security</li>
+      <li>End-to-end encryption for patient confidentiality</li>
+      <li>Validated by peer-reviewed scientific studies</li>
+      <li>Guided by leading neurologists and ethical experts</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="container fadeup">
+    <h2>Take Charge of Your Brain Health Today</h2>
+    <p>Discover how Neuroaces can help you stay proactive and informed.</p>
+    <a href="#contact" class="cta-btn" role="button">Contact Us</a>
+  </div>
+</footer>
+
+<script>
+  // Scroll based fade-up animation
+  document.addEventListener('DOMContentLoaded', () => {
+    const fadeEls = document.querySelectorAll('.fadeup');
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(e => {
+        if(e.isIntersecting) {
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
+      });
+    }, {threshold: 0.1});
+    fadeEls.forEach(el => observer.observe(el));
+  });
+</script>
 </body>
 </html>
+
