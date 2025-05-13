@@ -5,9 +5,6 @@ header{
 h1{
     text-align:center;
     font-size: 5rem ;
-    position: relative;
-    top: 100px;
-   
 }
 .hero-section{
     background-color: #F2EFE7;
@@ -15,7 +12,7 @@ h1{
 }
 #card1{
     position: relative;
-    left: 200px;
+    left: 180px;
     top: 80px;
     display: inline-block;
     height: 300px;
@@ -33,7 +30,7 @@ h1{
     font-size: 30px;
     display: inline-block;
     position: relative;
-    left: 500px;
+    left: 400px;
     top: 100px;
 }
 .hero-section{
@@ -42,6 +39,7 @@ h1{
     background-position: center;
     background-repeat: no-repeat;
     height: 89vh;
+    
 }
 button{
     height: 50px;
@@ -54,16 +52,12 @@ button{
     font-size: 24px;
     width: 600px;
     text-align: center;
-    position: relative;
-    top: 100px;
-    left: 450px;
 }
 .button2{
     height: 55px;
     margin: 10px;
     padding-bottom: 10px;
     border-radius:10px ;
-   
 }
 
 .button2{
@@ -76,4 +70,11 @@ button{
 }
 .navbar{
     background-color: #48A6A7;
+}
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertical centering */
+  align-items: center;     /* Horizontal centering */
+  text-align: center;
 }
